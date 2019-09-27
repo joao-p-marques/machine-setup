@@ -1,0 +1,7 @@
+[user]
+	name = joao-p-marques
+	email = joao.marques.contacto@gmail.com
+[core]
+	autocrlf = input
+[mergetool "nvim"]
+        cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
