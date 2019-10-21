@@ -5,7 +5,7 @@
 
 ########## Variables
 
-dir=~/dotfiles                    # dotfiles directory
+dir=$PWD/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 # list of files/folders to symlink in homedir
 files="vimrc gitconfig"
@@ -28,6 +28,14 @@ for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/
     echo "Creating symlink to $file in home directory."
-    cp $dir/$file ~/.$file
+    ln -s $dir/$file ~/.$file
     echo "$file ...done"
 done
+
+# Do the same for config.fish
+file=config.fish
+echo "Moving any existing $file from ~/.config/fish/ to $olddir"
+mv ~/.config/fish/$file ~/dotfiles_old/
+echo "Creating symlink to $file in ~/.config/fish/ ."
+ln -s $dir/$file ~/.config/fish/$file
+echo "$file ...done"
