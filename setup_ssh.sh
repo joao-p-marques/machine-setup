@@ -7,3 +7,5 @@ sudo systemctl start ssh
 
 sudo ufw allow ssh
 sudo ufw enable
+
+# ssh settings at /etc/ssh/sshd_config
