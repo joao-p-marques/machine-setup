@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # basic install
-sudo apt install vim git touch tree python python3 java-1.8.0-openjdk java-1.8.0-openjdk-devel wget curl pip 
+sudo apt install vim git tree python python3 default-jre default-jdk wget curl python-pip python3-pip
 
 # docker
 sudo apt-get purge docker lxc-docker docker-engine docker.io
@@ -21,7 +21,7 @@ sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
 sudo apt install fish
 # set as default shell
-chsh -s 'which fish'
+chsh -s $(which fish)
 
 # tmux
 sudo apt install tmux
