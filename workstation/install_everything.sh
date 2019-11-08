@@ -2,7 +2,7 @@
 
 # basic install
 echo "Installing base..."
-sudo dnf -y install vim git code flatpak make python-pip python3-pip
+sudo dnf -y install vim git code flatpak make python-pip python3-pip neovim python{2,3}-neovim
 
 # docker
 echo "Installing docker..."
