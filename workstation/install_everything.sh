@@ -2,7 +2,7 @@
 
 # basic install
 echo "Installing base..."
-sudo dnf -y install vim git code flatpak make
+sudo dnf -y install vim git code flatpak make python-pip python3-pip
 
 # docker
 echo "Installing docker..."
@@ -54,3 +54,18 @@ usermod -a -G vboxusers jota
 # meson build
 # sudo ninja -C "build" install
 # cd
+
+# neobundle
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
+sh ./install.sh
+rm install.sh
+
+# fish
+sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/shells:fish:release:2/Fedora_26/shells:fish:release:2.repo
+sudo dnf install fish
+# set as default shell
+chsh -s 'which fish'
+
+# install pipenv
+pip install --user pipenv
+
