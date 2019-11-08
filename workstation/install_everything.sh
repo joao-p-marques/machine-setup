@@ -69,3 +69,6 @@ chsh -s 'which fish'
 # install pipenv
 pip install --user pipenv
 
+# vim Plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
