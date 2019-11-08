@@ -1,2 +1,2 @@
-set PATH /home/jota/.local/bin/ $PATH
+set PATH /home/jota/.local/bin/ /snap/bin/ $PATH
 set EDITOR 'vim'

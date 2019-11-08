@@ -16,15 +16,15 @@ sudo dnf-config-manager \
 
 sudo dnf install docker-ce docker-ce-cli containerd.io
 
-# spotify
-echo "Installing spotify..."
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# # spotify
+# echo "Installing spotify..."
+# sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+# https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-sudo dnf install lpf-spotify-client
-lpf  approve spotify-client
-sudo -u pkg-build lpf build spotify-client
-sudo dnf install /var/lib/lpf/rpms/spotify-client/spotify-client-*.rpm
+# sudo dnf install lpf-spotify-client
+# lpf  approve spotify-client
+# sudo -u pkg-build lpf build spotify-client
+# sudo dnf install /var/lib/lpf/rpms/spotify-client/spotify-client-*.rpm
 
 # Virtual Box
 echo "Installing vbox..."
@@ -36,21 +36,21 @@ sudo dnf install @development-tools
 sudo dnf install kernel-devel kernel-headers dkms qt5-qtx11extras  elfutils-libelf-devel zlib-devel
 sudo dnf install VirtualBox-6.0
 
-usermod -a -G vboxusers tecmint
+usermod -a -G vboxusers jota
 
-# Pop OS Theme
-echo "Installing pop os theme..."
-sudo dnf install inkscape optipng gtk-murrine-engine sassc
-cd ~/Downloads
-git clone https://github.com/pop-os/gtk-theme
-mv gtk-theme pop-theme
-cd pop-theme
-make
-sudo make install
+# # Pop OS Theme
+# echo "Installing pop os theme..."
+# sudo dnf install inkscape optipng gtk-murrine-engine sassc
+# cd ~/Downloads
+# git clone https://github.com/pop-os/gtk-theme
+# mv gtk-theme pop-theme
+# cd pop-theme
+# make
+# sudo make install
 
-cd ..
-git clone https://github.com/pop-os/icon-theme pop-icon-theme
-cd pop-icon-theme
-meson build
-sudo ninja -C "build" install
-cd
+# cd ..
+# git clone https://github.com/pop-os/icon-theme pop-icon-theme
+# cd pop-icon-theme
+# meson build
+# sudo ninja -C "build" install
+# cd
