@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt update
+
 # basic install
 sudo apt install vim git tree python python3 default-jre default-jdk wget curl python-pip python3-pip
 
@@ -27,7 +29,8 @@ chsh -s $(which fish)
 sudo apt install tmux
 
 # install pipenv
-pip install --user pipenv
+# pip install --user pipenv
+sudo apt install python-pipenv
 
 # install python3.7
 sudo apt install python3.7

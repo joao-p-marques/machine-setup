@@ -5,3 +5,7 @@
 	autocrlf = input
 [mergetool "nvim"]
         cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+	prompt = false
