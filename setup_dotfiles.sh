@@ -39,3 +39,11 @@ mv ~/.config/fish/$file ~/dotfiles_old/
 echo "Creating symlink to $file in ~/.config/fish/ ."
 ln -s $dir/$file ~/.config/fish/$file
 echo "$file ...done"
+
+# Do the same for init.vim
+file=init.vim
+echo "Moving any existing $file from ~/.config/nvim/ to $olddir"
+mv ~/.config/nvim/$file ~/dotfiles_old/
+echo "Creating symlink to $file in ~/.config/nvim/ ."
+ln -s $dir/$file ~/.config/nvim/$file
+echo "$file ...done"

@@ -19,12 +19,11 @@ NeoBundle 'tpope/vim-fugitive'
 " Antlr plugin
 NeoBundle 'dylon/vim-antlr'
 
+" TypeScript
+NeoBundle 'HerringtonDarkholme/yats.vim'
+
 " Required:
 call neobundle#end()
-
-" call plug#begin()
-" Plug 'artur-shaik/vim-javacomplete2'
-" call plug#end()
 
 " Required:
 filetype plugin indent on
@@ -43,6 +42,9 @@ NeoBundleLazy 'tpope/vim-surround', {'autoload': { 'filetypes': 'all' } }
 NeoBundleLazy 'tpope/vim-repeat', {'autoload': {'filetypes': ['clojure', 'rst', 'python']} }
 " Comment plugin
 NeoBundleLazy 'tpope/vim-commentary', {'autoload': { 'filetypes': 'all' } }
+
+" CtrlP
+NeoBundleLazy 'ctrlpvim/ctrlp.vim'
 
 " Indentation settings
 set expandtab
@@ -74,3 +76,7 @@ set statusline+=\ %y
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
 " set statusline+=\
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
