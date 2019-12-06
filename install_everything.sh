@@ -12,6 +12,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 sudo apt install docker-ce docker-ce-cli containerd.io
+sudo apt install docker-compose
 
 # neobundle
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
@@ -39,3 +40,6 @@ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
 
 sudo update-alternatives --config python3 # select 2
+
+# install maven
+sudo apt install maven
