@@ -22,6 +22,9 @@ NeoBundle 'dylon/vim-antlr'
 " TypeScript
 NeoBundle 'HerringtonDarkholme/yats.vim'
 
+" CtrlP
+NeoBundle 'ctrlpvim/ctrlp.vim'
+
 " Required:
 call neobundle#end()
 
@@ -43,9 +46,6 @@ NeoBundleLazy 'tpope/vim-repeat', {'autoload': {'filetypes': ['clojure', 'rst', 
 " Comment plugin
 NeoBundleLazy 'tpope/vim-commentary', {'autoload': { 'filetypes': 'all' } }
 
-" CtrlP
-NeoBundleLazy 'ctrlpvim/ctrlp.vim'
-
 " Indentation settings
 set expandtab
 set shiftwidth=2
@@ -58,7 +58,8 @@ set autoindent
 " set foldclose=all
 
 " Set Search Highlight
-set nohlsearch
+" set nohlsearch
+set hlsearch
 
 " Set status line
 set laststatus=2

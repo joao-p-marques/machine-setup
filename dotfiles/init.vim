@@ -18,9 +18,9 @@ Plug 'tpope/vim-repeat'
 " Comment plugin
 Plug 'tpope/vim-commentary'
 
-" Snippets plugin
+" " Snippets plugin
 " Plug 'ncm2/ncm2', { 'on' : [] }
-Plug 'SirVer/ultisnips', { 'on' : [] }
+" Plug 'SirVer/ultisnips', { 'on' : [] }
 " Plug 'honza/vim-snippets', { 'on' : [] }
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
@@ -42,8 +42,8 @@ Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins'}
 " Python
 Plug 'deoplete-plugins/deoplete-jedi', { 'for' : 'python', 'on': [] }
 
-" Java
-Plug 'artur-shaik/vim-javacomplete2', { 'for' : 'java' }
+" " Java
+" Plug 'artur-shaik/vim-javacomplete2', { 'for' : 'java' }
 
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'ts' }

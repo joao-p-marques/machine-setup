@@ -3,7 +3,7 @@
 sudo apt update
 
 # basic install
-sudo apt install vim git tree python python3 default-jre default-jdk wget curl python-pip python3-pip
+sudo apt install vim git tree python python3 default-jre default-jdk wget curl python-pip python3-pip maven
 
 # docker
 sudo apt-get purge docker lxc-docker docker-engine docker.io
@@ -12,6 +12,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 sudo apt install docker-ce docker-ce-cli containerd.io
+sudo apt install docker-compose
 
 # neobundle
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
