@@ -18,9 +18,9 @@ Plug 'tpope/vim-repeat'
 " Comment plugin
 Plug 'tpope/vim-commentary'
 
-" Snippets plugin
+" " Snippets plugin
 " Plug 'ncm2/ncm2', { 'on' : [] }
-Plug 'SirVer/ultisnips', { 'on' : [] }
+" Plug 'SirVer/ultisnips', { 'on' : [] }
 " Plug 'honza/vim-snippets', { 'on' : [] }
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
@@ -42,15 +42,15 @@ Plug 'Shougo/deoplete.nvim' , { 'do': ':UpdateRemotePlugins'}
 " Python
 Plug 'deoplete-plugins/deoplete-jedi', { 'for' : 'python', 'on': [] }
 
-" Java
-Plug 'artur-shaik/vim-javacomplete2', { 'for' : 'java' }
+" " Java
+" Plug 'artur-shaik/vim-javacomplete2', { 'for' : 'java' }
 
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'ts' }
-Plug 'mhartington/nvim-typescript', { 'for' : 'ts', 'do': './install.sh' }
+" Plug 'mhartington/nvim-typescript', { 'for' : 'ts', 'do': './install.sh' }
 
-" JavaScript
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for' : 'js' }
+" " JavaScript
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for' : 'js' }
 
 Plug 'ayu-theme/ayu-vim'
 

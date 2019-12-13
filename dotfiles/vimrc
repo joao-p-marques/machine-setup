@@ -22,6 +22,9 @@ NeoBundle 'dylon/vim-antlr'
 " TypeScript
 NeoBundle 'HerringtonDarkholme/yats.vim'
 
+" CtrlP
+NeoBundle 'ctrlpvim/ctrlp.vim'
+
 " Required:
 call neobundle#end()
 
@@ -42,9 +45,6 @@ NeoBundleLazy 'tpope/vim-surround', {'autoload': { 'filetypes': 'all' } }
 NeoBundleLazy 'tpope/vim-repeat', {'autoload': {'filetypes': ['clojure', 'rst', 'python']} }
 " Comment plugin
 NeoBundleLazy 'tpope/vim-commentary', {'autoload': { 'filetypes': 'all' } }
-
-" CtrlP
-NeoBundleLazy 'ctrlpvim/ctrlp.vim'
 
 " Indentation settings
 set expandtab
