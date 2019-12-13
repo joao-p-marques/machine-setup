@@ -58,7 +58,8 @@ set autoindent
 " set foldclose=all
 
 " Set Search Highlight
-set nohlsearch
+" set nohlsearch
+set hlsearch
 
 " Set status line
 set laststatus=2
