@@ -11,3 +11,5 @@
 	prompt = false
 [push]
 	default = current
+[pull]
+	default = current
