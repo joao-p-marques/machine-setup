@@ -9,3 +9,7 @@
 	tool = vimdiff
 	conflictstyle = diff3
 	prompt = false
+[push]
+	default = current
+[pull]
+	default = current

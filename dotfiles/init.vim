@@ -47,10 +47,10 @@ Plug 'deoplete-plugins/deoplete-jedi', { 'for' : 'python', 'on': [] }
 
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'ts' }
-Plug 'mhartington/nvim-typescript', { 'for' : 'ts', 'do': './install.sh' }
+" Plug 'mhartington/nvim-typescript', { 'for' : 'ts', 'do': './install.sh' }
 
-" JavaScript
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for' : 'js' }
+" " JavaScript
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for' : 'js' }
 
 Plug 'ayu-theme/ayu-vim'
 

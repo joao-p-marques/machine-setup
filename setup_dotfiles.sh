@@ -47,3 +47,11 @@ mv ~/.config/nvim/$file ~/dotfiles_old/
 echo "Creating symlink to $file in ~/.config/nvim/ ."
 ln -s $dir/$file ~/.config/nvim/$file
 echo "$file ...done"
+
+# Do the same for fish functions
+file=fish_prompt.fish
+echo "Moving any existing $file from ~/.config/fish/functions to $olddir"
+mv ~/.config/fish/functions/$file ~/dotfiles_old/
+echo "Creating symlink to $file in ~/.config/fish/functions/ ."
+ln -s $dir/$file ~/.config/fish/functions/$file
+echo "$file ...done"
