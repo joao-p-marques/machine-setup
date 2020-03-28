@@ -1,0 +1,4 @@
+#!/bin/bash
+
+VM_NAME=$1
+VBoxManage startvm $VM_NAME --type headless
