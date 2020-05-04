@@ -30,6 +30,7 @@ chsh -s $(which fish)
 
 # tmux
 sudo apt install tmux
+sudo apt install -y xclip
 
 # install pipenv
 # pip install --user pipenv
