@@ -3,7 +3,7 @@
 sudo apt update
 
 # basic install
-sudo apt install vim git tree python python3 default-jre default-jdk wget curl python-pip python3-pip maven
+sudo apt install vim git tree python python3 default-jre default-jdk wget curl python-pip python3-pip 
 
 # docker
 sudo apt-get purge docker lxc-docker docker-engine docker.io
@@ -13,6 +13,8 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 
 sudo apt install docker-ce docker-ce-cli containerd.io
 pip install --user docker-compose
+
+sudo usermod -aG docker jota
 
 # neobundle
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
@@ -31,15 +33,15 @@ sudo apt install tmux
 
 # install pipenv
 # pip install --user pipenv
-sudo apt install python-pipenv
+# sudo apt install python-pipenv
 
 # install python3.7
-sudo apt install python3.7
+# sudo apt install python3.7
 
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
+# sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
+# sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
 
-sudo update-alternatives --config python3 # select 2
+# sudo update-alternatives --config python3 # select 2
 
 # install maven
-sudo apt install maven
+# sudo apt install maven
