@@ -5,3 +5,6 @@ set -x EDITOR 'vim'
 if [ -f '/home/jota/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/home/jota/Downloads/google-cloud-sdk/path.fish.inc'; end
 
 alias ll='ls -la'
+
+bind \cH backward-kill-word
+bind "[3;5~" kill-word
