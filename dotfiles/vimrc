@@ -81,3 +81,8 @@ set statusline+=\ %l:%c
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" Map Ctrl-Backspace to delete the previous word in insert mode.
+set backspace=indent,eol,start
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
