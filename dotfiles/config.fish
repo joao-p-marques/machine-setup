@@ -5,6 +5,7 @@ set -x EDITOR 'vim'
 if [ -f '/home/jota/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/home/jota/Downloads/google-cloud-sdk/path.fish.inc'; end
 
 alias ll='ls -la'
+alias rm='rm -I'
 alias v='vim'
 
 alias mvn='docker run -it --rm -v $PWD:/src -w /src maven mvn'
