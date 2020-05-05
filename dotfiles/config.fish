@@ -11,5 +11,15 @@ alias mvn='docker run -it --rm -v $PWD:/src -w /src maven mvn'
 alias npm='docker run -it --rm -v $PWD:/src -w /src node npm'
 alias yarn='docker run -it --rm -v $PWD:/src -w /src node yarn'
 
+alias vimconf='vim ~/.vimrc' 
+alias fishconf='vim ~/.config/fish/config.fish' 
+alias tmuxconf='vim ~/.tmux.conf' 
+
 bind \cH backward-kill-word
 bind "[3;5~" kill-word
+
+# auto start tmux
+if status is-interactive
+and not set -q TMUX
+    exec tmux
+end
