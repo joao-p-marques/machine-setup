@@ -3,7 +3,7 @@
 sudo apt update
 
 # basic install
-sudo apt install vim git tree python python3 default-jre default-jdk wget curl python-pip python3-pip 
+sudo apt install vim git tree python3 default-jre default-jdk wget curl python3-pip python-is-python3
 
 # docker
 sudo apt-get purge docker lxc-docker docker-engine docker.io
@@ -12,7 +12,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 sudo apt install docker-ce docker-ce-cli containerd.io
-pip install --user docker-compose
+pip3 install --user docker-compose
 
 sudo usermod -aG docker jota
 
@@ -29,8 +29,8 @@ sudo apt install fish
 chsh -s $(which fish)
 
 # tmux
-sudo apt install tmux
-sudo apt install -y xclip
+# sudo apt install tmux
+# sudo apt install -y xclip
 
 # install pipenv
 # pip install --user pipenv
