@@ -2,39 +2,38 @@
 
 # basic install
 echo "Installing base..."
-sudo dnf -y install vim git flatpak make python-pip python3-pip neovim python-neovim
+sudo dnf -y install tree curl wget vim git flatpak make default-jdk
 
 # docker
 echo "Installing docker..."
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-sudo dnf makecache
+echo("Removing old docker packages...")
+sudo dnf remove docker-*
+sudo dnf config-manager --disable docker-*
+echo("Enabling old cgroups...")
+sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
+echo("Whitelisting docker in firewall...")
+sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-masquerade
+echo("Installing Moby...")
+sudo dnf install moby-engine docker-compose
+# sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+# sudo dnf makecache
+# sudo dnf install docker-ce
 
-sudo dnf install docker-ce
+sudo systemctl enable docker
+sudo systemctl start docker
 
-sudo systemctl enable docker.service
-sudo systemctl start docker.service
+# # Virtual Box
+# echo "Installing vbox..."
+# sudo wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo -P /etc/yum.repos.d/
 
-# # spotify
-# echo "Installing spotify..."
-# sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-# https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# sudo dnf update
 
-# sudo dnf install lpf-spotify-client
-# lpf  approve spotify-client
-# sudo -u pkg-build lpf build spotify-client
-# sudo dnf install /var/lib/lpf/rpms/spotify-client/spotify-client-*.rpm
+# sudo dnf install @development-tools
+# sudo dnf install kernel-devel kernel-headers dkms qt5-qtx11extras  elfutils-libelf-devel zlib-devel
+# sudo dnf install VirtualBox-6.0
 
-# Virtual Box
-echo "Installing vbox..."
-sudo wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo -P /etc/yum.repos.d/
-
-sudo dnf update
-
-sudo dnf install @development-tools
-sudo dnf install kernel-devel kernel-headers dkms qt5-qtx11extras  elfutils-libelf-devel zlib-devel
-sudo dnf install VirtualBox-6.0
-
-sudo usermod -a -G vboxusers jota
+# sudo usermod -a -G vboxusers jota
 
 # # Pop OS Theme
 # echo "Installing pop os theme..."
@@ -65,20 +64,19 @@ sudo dnf install fish
 chsh -s 'which fish'
 
 # install pipenv
-pip install --user pipenv
+# pip install --user pipenv
 
 # vim Plug
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Slack
-sudo dnf -y install wget
-wget https://downloads.slack-edge.com/linux_releases/slack-3.4.0-0.1.fc21.x86_64.rpm
-sudo dnf localinstall slack-3.4.0-0.1.fc21.x86_64.rpm
-rm slack-3.4.0-0.1.fc21.x86_64.rpm
+# pipx and python dependencies
+python -m pip install --user pipx
+pipx ensurepath
 
-# VS Code
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-sudo dnf check-update
-sudo dnf install code
+pipx install copier
+pipx install invoke
+pipx install pre-commit
+
+pipx install ansible
+

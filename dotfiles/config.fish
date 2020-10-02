@@ -1,4 +1,4 @@
-set PATH /home/jota/.local/bin/ /snap/bin/ /var/lib/snapd/snap/bin $PATH
+set PATH /home/jota/.local/bin/ /snap/bin/ /var/lib/snapd/snap/bin /usr/lib/ $PATH
 set -x EDITOR 'vim'
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -19,8 +19,3 @@ alias tmuxconf='vim ~/.tmux.conf'
 bind \cH backward-kill-word
 bind "[3;5~" kill-word
 
-# auto start tmux
-if status is-interactive
-and not set -q TMUX
-    exec tmux
-end

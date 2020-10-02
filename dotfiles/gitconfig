@@ -1,6 +1,6 @@
 [user]
-	name = joao-p-marques
-	email = joao.marques.contacto@gmail.com
+	name = João Marques
+	email = joao.marques@tecnativa.com
 [core]
 	autocrlf = input
 [mergetool "nvim"]

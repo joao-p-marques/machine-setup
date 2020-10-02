@@ -32,6 +32,16 @@ chsh -s $(which fish)
 sudo apt install tmux
 sudo apt install -y xclip
 
+# pipx and python dependencies
+sudo apt install pipx
+sudo apt install python3-venv
+
+pipx install copier
+pipx install invoke
+pipx install pre-commit
+
+pipx install ansible
+
 # install pipenv
 # pip install --user pipenv
 # sudo apt install python-pipenv
