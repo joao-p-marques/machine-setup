@@ -2,26 +2,25 @@
 
 # basic install
 echo "Installing base..."
-sudo dnf -y install tree curl wget vim git flatpak make default-jdk
+sudo dnf update
+sudo dnf -y install tree curl wget vim git flatpak make 
 
 # docker
 echo "Installing docker..."
-echo("Removing old docker packages...")
-sudo dnf remove docker-*
-sudo dnf config-manager --disable docker-*
-echo("Enabling old cgroups...")
-sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
-echo("Whitelisting docker in firewall...")
-sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
-sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-masquerade
-echo("Installing Moby...")
-sudo dnf install moby-engine docker-compose
-# sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-# sudo dnf makecache
-# sudo dnf install docker-ce
+echo "Removing old docker packages..."
+#sudo dnf remove docker-*
+#sudo dnf config-manager --disable docker-*
+echo "Enabling old cgroups..."
+#sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
+echo "Whitelisting docker in firewall..."
+#sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+#sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-masquerade
+echo "Installing Moby..."
+#sudo dnf install moby-engine docker-compose
+#sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 
-sudo systemctl enable docker
-sudo systemctl start docker
+#sudo systemctl enable docker
+#sudo systemctl start docker
 
 # # Virtual Box
 # echo "Installing vbox..."
@@ -61,7 +60,8 @@ rm install.sh
 sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/shells:fish:release:2/Fedora_26/shells:fish:release:2.repo
 sudo dnf install fish
 # set as default shell
-chsh -s 'which fish'
+sudo dnf install -y util-linux-user
+chsh -s $(which fish)
 
 # install pipenv
 # pip install --user pipenv
@@ -78,5 +78,5 @@ pipx install copier
 pipx install invoke
 pipx install pre-commit
 
-pipx install ansible
+pipx install ansible --include-deps
 

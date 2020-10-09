@@ -7,7 +7,7 @@
 
 dir=$PWD/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-# list of files/folders to symlink in homedir
+# list of homedirfiles/folders to symlink in homedir
 files="vimrc gitconfig tmux.conf"
 
 ##########
@@ -71,3 +71,14 @@ mv ~/.var/app/com.github.devalien.workspaces/data/com.github.devalien.workspaces
 echo "Creating symlink to $file in ~/.var/app/com.github.devalien.workspaces/data/com.github.devalien.workspaces/data.json ."
 ln -s $dir/$file ~/.var/app/com.github.devalien.workspaces/data/com.github.devalien.workspaces/data.json
 echo "$file ...done"
+
+# Do the same for ulaucher settings
+echo "Moving any existing file from ~/.config/ulauncher to $olddir"
+mv ~/.config/ulauncher/*.json ~/dotfiles_old/
+dir=$PWD/ulauncher
+files="extensions.json shortcuts.json settings.json"
+  for file in $files; do
+  echo "Creating symlink to $file in ~/.config/ulaucher ."
+  ln -s $dir/$file ~/.config/ulauncher
+  echo "$file ...done"
+done
