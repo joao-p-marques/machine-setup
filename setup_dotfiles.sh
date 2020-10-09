@@ -55,3 +55,19 @@ mv ~/.config/fish/functions/$file ~/dotfiles_old/
 echo "Creating symlink to $file in ~/.config/fish/functions/ ."
 ln -s $dir/$file ~/.config/fish/functions/$file
 echo "$file ...done"
+
+# Do the same for vscode settings
+file=vscode-settings.json
+echo "Moving any existing $file from ~/.config/Code/User/ to $olddir"
+mv ~/.config/Code/User/settings.json ~/dotfiles_old/
+echo "Creating symlink to $file in ~/.config/Code/User/settings.json ."
+ln -s $dir/$file ~/.config/Code/User/settings.json
+echo "$file ...done"
+
+# Do the same for workspace settings
+file=workspaces-data.json
+echo "Moving any existing $file from ~/.var/app/com.github.devalien.workspaces/data/com.github.devalien.workspaces/ to $olddir"
+mv ~/.var/app/com.github.devalien.workspaces/data/com.github.devalien.workspaces/data.json ~/dotfiles_old/
+echo "Creating symlink to $file in ~/.var/app/com.github.devalien.workspaces/data/com.github.devalien.workspaces/data.json ."
+ln -s $dir/$file ~/.var/app/com.github.devalien.workspaces/data/com.github.devalien.workspaces/data.json
+echo "$file ...done"

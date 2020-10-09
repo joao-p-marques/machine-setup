@@ -31,13 +31,26 @@ gnome-extensions install timepp@zagortenay333
 
 # Flatpaks
 
+flatpak install com.github.devalien.workspaces
+flatpak install com.obsproject.Studio
 flatpak install com.spotify.Client
 flatpak install com.uploadedlobster.peek
 flatpak install im.riot.Riot
 flatpak install me.kozec.syncthingtk
+flatpak install net.codeindustry.MasterPDFEditor
+flatpak install net.poedit.Poedit
+flatpak install org.audacityteam.Audacity
+flatpak install org.audacityteam.Audacity.Codecs
+flatpak install org.eu.encom.spectral.Locale
 flatpak install org.gnome.DejaDup
+flatpak install org.gnome.Fractal.Locale
+flatpak install org.gnome.Logs
+flatpak install org.gnome.Platform
+flatpak install org.gnome.Platform
 flatpak install org.gnome.seahorse.Application
 flatpak install org.jitsi.jitsi-meet
+flatpak install org.kde.kdenlive
+flatpak install org.onlyoffice.desktopeditors
 flatpak install org.videolan.VLC
 flatpak install us.zoom.Zoom
 

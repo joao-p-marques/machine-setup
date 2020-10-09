@@ -1,0 +1,35 @@
+{
+    "workbench.colorTheme": "Hop Light",
+    "window.zoomLevel": 0,
+    "git.enableSmartCommit": true,
+    "editor.rulers": [
+        79,87,119
+    ],
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "vim.commandLineModeKeyBindings": [
+
+    ],
+    "vim.handleKeys": {
+        "<C-c>": false,
+        "<C-v>": false,
+        "<C-w>": false
+    },
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["Y"],
+            "after": ["y", "$"]
+        }
+    ],
+    "editor.lineNumbers": "relative",
+    "python.showStartPage": false,
+    "firefox.executable": "/usr/bin/firefox",
+    "firefox.profile": "vscode-debug",
+    "debug.javascript.autoExpandGetters": true,
+    "firefox.keepProfileChanges": true,
+    "workbench.colorCustomizations": {},
+    "remote.extensionKind": {
+        "ms-azuretools.vscode-docker": "workspace"
+    },
+    "git.autofetch": true,
+}
