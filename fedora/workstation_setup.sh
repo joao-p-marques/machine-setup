@@ -19,15 +19,6 @@ gnome-extensions install sound-output-device-chooser@kgshank.net
 gnome-extensions install clipboard-indicator@tudmotu.com
 gnome-extensions install Vitals@CoreCoding.com
 gnome-extensions install places-menu@gnome-shell-extensions.gcampax.github.com
-gnome-extensions install alt-tab-raise-first-window@system76.com
-gnome-extensions install always-show-workspaces@system76.com
-gnome-extensions install batteryiconfix@kylecorry31.github.io
-gnome-extensions install desktop-icons@csoriano
-gnome-extensions install pop-shell@system76.com
-gnome-extensions install pop-shop-details@system76.com
-gnome-extensions install system76-power@system76.com
-gnome-extensions install ubuntu-appindicators@ubuntu.com
-gnome-extensions install timepp@zagortenay333
 
 # Flatpaks
 
@@ -56,9 +47,7 @@ flatpak install flathub us.zoom.Zoom
 
 sudo dnf install gnome-tweak-tool
 
-# sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
-# sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_32/home:manuelschneid3r.repo
-# sudo dnf install albert
-
 sudo dnf install ulaucher 
 sudo snap install bw
+
+sudo dnf install flameshot
