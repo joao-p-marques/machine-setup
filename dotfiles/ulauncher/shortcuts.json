@@ -29,14 +29,14 @@
         "run_without_argument": false,
         "added": 1602276548.0215003
     },
-    "fafb477b-aa74-4a6f-86b3-e6fc932b704e": {
-        "id": "fafb477b-aa74-4a6f-86b3-e6fc932b704e",
+    "f3548a99-f64e-4288-93d8-d4793051e8d8": {
+        "id": "f3548a99-f64e-4288-93d8-d4793051e8d8",
         "name": "DuckDuckGo",
         "keyword": "dd",
         "cmd": "https://duckduckgo.com/?q=%s",
-        "icon": null,
+        "icon": "~/Downloads/external-content.duckduckgo.com.png",
         "is_default_search": true,
         "run_without_argument": false,
-        "added": 1602276602.2162886
+        "added": 1602344777.751083
     }
 }
