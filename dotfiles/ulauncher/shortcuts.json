@@ -38,5 +38,65 @@
         "is_default_search": true,
         "run_without_argument": false,
         "added": 1602344777.751083
+    },
+    "1b395dbe-e444-4327-bbe4-a10e1d2bffbb": {
+        "id": "1b395dbe-e444-4327-bbe4-a10e1d2bffbb",
+        "name": "Watchtower Online Library",
+        "keyword": "wol",
+        "cmd": "https://wol.jw.org/es/wol/s/r4/lp-s?q=%s&p=par&r=occ",
+        "icon": "~/Downloads/wol.ico",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1602694300.6501634
+    },
+    "abaed4be-77de-4acf-8a6f-de5ab64a5a37": {
+        "id": "abaed4be-77de-4acf-8a6f-de5ab64a5a37",
+        "name": "JW ES",
+        "keyword": "jwes",
+        "cmd": "https://www.jw.org/es/b%C3%BAsquedas/?q=%s",
+        "icon": "~/Downloads/jw.jpeg",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1602694424.6294067
+    },
+    "cdcc8ba4-3108-44ec-a88f-bc72de36dfea": {
+        "id": "cdcc8ba4-3108-44ec-a88f-bc72de36dfea",
+        "name": "JW PT",
+        "keyword": "jw",
+        "cmd": "https://www.jw.org/pt-pt/pesquisar/?q=%s",
+        "icon": "~/Downloads/jw.jpeg",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1602694484.6489034
+    },
+    "e59e997a-1ebe-43a3-a3c5-a822c51a8bc4": {
+        "id": "e59e997a-1ebe-43a3-a3c5-a822c51a8bc4",
+        "name": "Biblia ES",
+        "keyword": "bibes",
+        "cmd": "#!/usr/bin/env python\nimport webbrowser\nimport sys\nbook = sys.argv[1]\nchapter = sys.argv[2]\nwebbrowser.open(f\"https://www.jw.org/es/biblioteca/biblia/nwt/libros/{book}/{chapter}\") ",
+        "icon": "~/Downloads/jw.jpeg",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1602694668.19408
+    },
+    "6856332a-ec2f-41c3-9206-7624ef26fa8a": {
+        "id": "6856332a-ec2f-41c3-9206-7624ef26fa8a",
+        "name": "Biblia PT",
+        "keyword": "bib",
+        "cmd": "#!/usr/bin/env python\nimport webbrowser\nimport sys\nbook = sys.argv[1]\nchapter = sys.argv[2]\n# verse = sys.argv[3].zfill(2)\nwebbrowser.open(f\"https://www.jw.org/pt-pt/biblioteca/biblia/biblia-estudo/livros/{book}/{chapter}/\") ",
+        "icon": "~/Downloads/jw.jpeg",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1602708665.1258483
+    },
+    "a1433009-d678-4ee8-91f9-4c1a46dd8296": {
+        "id": "a1433009-d678-4ee8-91f9-4c1a46dd8296",
+        "name": "Linguee EN-ES",
+        "keyword": "tt",
+        "cmd": "https://www.linguee.com/english-spanish/search?source=auto&query=%s",
+        "icon": "~/Downloads/linguee.png",
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1609838485.5322819
     }
 }

@@ -1,35 +1,76 @@
 {
-    "workbench.colorTheme": "Hop Light",
-    "window.zoomLevel": 0,
-    "git.enableSmartCommit": true,
-    "editor.rulers": [
-        79,87,119
-    ],
-    "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "vim.commandLineModeKeyBindings": [
-
-    ],
-    "vim.handleKeys": {
-        "<C-c>": false,
-        "<C-v>": false,
-        "<C-w>": false
+  "workbench.colorTheme": "GitHub Plus",
+  "git.enableSmartCommit": true,
+  "editor.rulers": [79, 87, 119],
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "vim.commandLineModeKeyBindings": [],
+  "vim.handleKeys": {
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-w>": false,
+    "<C-n>": false,
+    "<C-f>": false,
+    "<C-d>": false,
+    "<C-x>": false,
+    "<tab>": false
+  },
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["Y"],
+      "after": ["y", "$"]
     },
-    "vim.normalModeKeyBindings": [
-        {
-            "before": ["Y"],
-            "after": ["y", "$"]
-        }
-    ],
-    "editor.lineNumbers": "relative",
-    "python.showStartPage": false,
-    "firefox.executable": "/usr/bin/firefox",
-    "firefox.profile": "vscode-debug",
-    "debug.javascript.autoExpandGetters": true,
-    "firefox.keepProfileChanges": true,
-    "workbench.colorCustomizations": {},
-    "remote.extensionKind": {
-        "ms-azuretools.vscode-docker": "workspace"
+    {
+      "before": ["shift+tab"],
+      "after": ["<"]
     },
-    "git.autofetch": true,
+    {
+      "before": ["tab"],
+      "after": [">"]
+    }
+  ],
+  // "editor.lineNumbers": "relative",
+  "python.showStartPage": false,
+  "firefox.executable": "/usr/bin/firefox",
+  "firefox.profile": "vscode-debug",
+  "debug.javascript.autoExpandGetters": true,
+  "firefox.keepProfileChanges": true,
+  "workbench.colorCustomizations": {},
+  "remote.extensionKind": {
+    "ms-azuretools.vscode-docker": "workspace"
+  },
+  "git.autofetch": true,
+  "python.linting.flake8Enabled": true,
+  "terminal.integrated.env.linux": {
+    "EDITOR": "code --wait"
+  },
+  "python.experiments.optOutFrom": ["All"],
+  "restructuredtext.confPath": "",
+  "terminal.external.linuxExec": "gnome-terminal",
+  "cSpell.enableFiletypes": ["shellscript"],
+  "todo-tree.tree.showScanModeButton": false,
+  "git.allowNoVerifyCommit": true,
+  "cSpell.userWords": [
+    "gitlab",
+    "odoo",
+    "pylint",
+    "tecnativa"
+  ],
+  "window.titleBarStyle": "custom",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)"
 }
