@@ -18,6 +18,7 @@ sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-masquerade
 echo "Installing Moby..."
 sudo dnf install moby-engine docker-compose
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io
 
 sudo systemctl enable docker
 sudo systemctl start docker

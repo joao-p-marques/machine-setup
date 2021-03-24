@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# General development
+sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+sudo dnf install gh
+
 # VS Code
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
@@ -12,13 +16,21 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 sudo dnf install snapd
 sudo ln -s /var/lib/snapd/snap /snap
 
+# Libreoffice
+
+sudo dnf install libreoffice
+sudo dnf install libreoffice-es
+sudo dnf install libreoffice-pt-PT
+
 # GNOME Extensions
 
-gnome-extensions install caffeine@patapon.info
-gnome-extensions install sound-output-device-chooser@kgshank.net
-gnome-extensions install clipboard-indicator@tudmotu.com
-gnome-extensions install Vitals@CoreCoding.com
-gnome-extensions install places-menu@gnome-shell-extensions.gcampax.github.com
+# gnome-extensions install caffeine@patapon.info
+# gnome-extensions install sound-output-device-chooser@kgshank.net
+# gnome-extensions install clipboard-indicator@tudmotu.com
+# gnome-extensions install Vitals@CoreCoding.com
+# gnome-extensions install places-menu@gnome-shell-extensions.gcampax.github.com
+
+sudo dnf install gnome-shell-extension-gpaste gpaste
 
 # Flatpaks
 
@@ -51,3 +63,6 @@ sudo dnf install ulaucher
 sudo snap install bw
 
 sudo dnf install flameshot
+
+sudo dnf install VirtualBox
+sudo dnf install vagrant
