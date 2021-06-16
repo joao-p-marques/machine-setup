@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "GitHub Plus",
+  "workbench.colorTheme": "Ra Spring",
   "git.enableSmartCommit": true,
   "editor.rulers": [79, 87, 119],
   "files.trimFinalNewlines": true,
@@ -30,6 +30,8 @@
     }
   ],
   // "editor.lineNumbers": "relative",
+  "editor.tabCompletion": true,
+  "editor.snippetSuggestions": "top",
   "python.showStartPage": false,
   "firefox.executable": "/usr/bin/firefox",
   "firefox.profile": "vscode-debug",
@@ -44,9 +46,12 @@
   "terminal.integrated.env.linux": {
     "EDITOR": "code --wait"
   },
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.drawBoldTextInBrightColors": false,
+  "terminal.integrated.experimentalLinkProvider": false,
+  "terminal.integrated.rendererType": "auto",
   "python.experiments.optOutFrom": ["All"],
-  "restructuredtext.confPath": "",
-  "terminal.external.linuxExec": "gnome-terminal",
   "cSpell.enableFiletypes": ["shellscript"],
   "todo-tree.tree.showScanModeButton": false,
   "git.allowNoVerifyCommit": true,
@@ -57,12 +62,9 @@
     "tecnativa"
   ],
   "window.titleBarStyle": "custom",
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -72,5 +74,17 @@
     "[ ]",
     "[x]"
   ],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)"
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "gitlens.gitCommands.skipConfirmations": [
+    "fetch:command",
+    "switch:command"
+  ],
+  "githubPullRequests.remotes": [
+    "origin",
+    "upstream",
+    "Tecnativa"
+  ],
+  "python.languageServer": "Pylance",
+  "gitlab.instanceUrl": "https://gitlab.tecnativa.com",
+  "terminal.external.linuxExec": "gome-terminal"
 }

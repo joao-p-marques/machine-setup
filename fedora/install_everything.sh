@@ -46,6 +46,8 @@ sudo dnf install fish
 # set as default shell
 sudo dnf install -y util-linux-user
 chsh -s $(which fish)
+# Install fisher
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 # pipx and python dependencies
 python -m pip install --user pipx

@@ -16,3 +16,5 @@
 	rebase = true
 [rebase]
 	instructionFormat = (%an) %s
+[init]
+	defaultBranch = master

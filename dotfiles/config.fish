@@ -1,5 +1,7 @@
 set PATH /home/jota/.local/bin/ /snap/bin/ /var/lib/snapd/snap/bin /usr/lib/ $PATH
 
+export PAGER="less"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/jota/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/home/jota/Downloads/google-cloud-sdk/path.fish.inc'; end
 

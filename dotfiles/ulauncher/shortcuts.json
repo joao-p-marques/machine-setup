@@ -98,5 +98,15 @@
         "is_default_search": false,
         "run_without_argument": false,
         "added": 1609838485.5322819
+    },
+    "47cdc677-5763-47ec-adb0-57780c460b21": {
+        "id": "47cdc677-5763-47ec-adb0-57780c460b21",
+        "name": "Firefox Tecnativa",
+        "keyword": "fft",
+        "cmd": "firefox -P Tecnativa",
+        "icon": "/usr/share/icons/hicolor/symbolic/apps/firefox-symbolic.svg",
+        "is_default_search": false,
+        "run_without_argument": true,
+        "added": 1618221283.611237
     }
 }
