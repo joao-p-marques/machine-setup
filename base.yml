@@ -1,0 +1,126 @@
+- name: make sure you have the required role dependencies
+  hosts: localhost
+  tags:
+    - always
+  tasks:
+    - name: Install base packages
+      loop:
+        - tree
+        - curl
+        - wget
+        - vim
+        - git
+        - flatpak
+        - make
+        - fish
+      community.general.rpm_ostree_pkg:
+        name: "{{ item }}"
+        state: present
+
+    - name: Install docker
+      community.general.rpm_ostree_pkg:
+        name: moby-engine
+        state: present
+
+    # - name: Enable old cgroups
+    #   command: grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
+    #   become: yes
+
+    # - name: Whitelist docker in firewall
+    #   ansible.posix.firewalld:
+    #     zone: trusted
+    #     state: enabled
+    #     permanent: yes
+    #     interface: docker0
+
+    # - ansible.posix.firewalld:
+    #     zone: FedoraWorkstation
+    #     state: enabled
+    #     permanent: yes
+    #     masquerade: yes
+
+    - name: Start docker service
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Add user to docker group
+      ansible.builtin.user:
+        append: yes
+        groups:
+          - docker
+        name: "{{ ansible_user }}"
+
+    - name: Install pip packages
+      loop:
+        - docker-compose
+        - ansible --include-deps
+        - invoke
+        - pre-commit
+        - git+https://github.com/copier-org/copier.git@master
+        - git+https://github.com/OCA/odoo-module-migrator.git@master
+        - poetry
+      command: pipx install {{ item }}
+
+    - name: Install neobundle for vim
+      block:
+        - ansible.builtin.get_url:
+            dest: /tmp/install.sh
+            url: https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh
+
+        - command: sh /tmp/install.sh
+
+    - name: Get fish path
+      command: which fish
+      register: result
+
+    - name: Configure fish
+      when: "fish" in "{{ result.stdout }}"
+      ansible.builtin.user:
+        name: "{{ ansible_user }}"
+        shell: "{{ result.stdout }}"
+
+    - name: Install fisher
+      command: curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+    - name: Install VSCode
+      block:
+        # - name: Import VSCode key
+        #   command: rpm --import https://packages.microsoft.com/keys/microsoft.asc
+        #   become: yes
+
+        - name: Add VSCode Repo
+          file:
+            src: vscode.repo
+            dest: /etc/yum.repos.d/vscode.repo
+
+        - name: Install VSCode
+          community.general.rpm_ostree_pkg:
+            name: code
+            state: present
+
+    - name: Add Flathub
+      command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+
+    - name: Install set of flatpaks
+      loop:
+        - com.github.devalien.workspaces
+        - com.obsproject.Studio
+        - com.spotify.Client
+        - com.uploadedlobster.peek
+        - im.riot.Riot
+        - me.kozec.syncthingtk
+        - net.poedit.Poedit
+        - org.audacityteam.Audacity
+        - org.audacityteam.Audacity.Codecs
+        - org.gnome.DejaDup
+        - org.gnome.Logs
+        - org.gnome.Platform
+        - org.gnome.seahorse.Application
+        - org.jitsi.jitsi-meet
+        - org.kde.kdenlive
+        - org.videolan.VLC
+        - us.zoom.Zoom
+      command: flatpak install flathub {{ item }}
