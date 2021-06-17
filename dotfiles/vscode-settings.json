@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Ra Spring",
+  "workbench.colorTheme": "Solarized Light",
   "git.enableSmartCommit": true,
   "editor.rulers": [79, 87, 119],
   "files.trimFinalNewlines": true,
@@ -46,24 +46,17 @@
   "terminal.integrated.env.linux": {
     "EDITOR": "code --wait"
   },
-  "terminal.integrated.gpuAcceleration": "on",
   "terminal.integrated.allowChords": false,
   "terminal.integrated.drawBoldTextInBrightColors": false,
   "terminal.integrated.experimentalLinkProvider": false,
-  "terminal.integrated.rendererType": "auto",
   "python.experiments.optOutFrom": ["All"],
   "cSpell.enableFiletypes": ["shellscript"],
   "todo-tree.tree.showScanModeButton": false,
   "git.allowNoVerifyCommit": true,
-  "cSpell.userWords": [
-    "gitlab",
-    "odoo",
-    "pylint",
-    "tecnativa"
-  ],
+  "cSpell.userWords": ["gitlab", "odoo", "pylint", "tecnativa"],
   "window.titleBarStyle": "custom",
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
+    "*.ipynb": "jupyter-notebook"
   },
   "todo-tree.general.tags": [
     "BUG",
@@ -75,16 +68,28 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "gitlens.gitCommands.skipConfirmations": [
-    "fetch:command",
-    "switch:command"
-  ],
-  "githubPullRequests.remotes": [
-    "origin",
-    "upstream",
-    "Tecnativa"
-  ],
-  "python.languageServer": "Pylance",
+  "gitlens.gitCommands.skipConfirmations": ["fetch:command", "switch:command"],
+  "githubPullRequests.remotes": ["origin", "upstream", "Tecnativa"],
+  "python.languageServer": "Jedi",
   "gitlab.instanceUrl": "https://gitlab.tecnativa.com",
-  "terminal.external.linuxExec": "gome-terminal"
+  "terminal.external.linuxExec": "gome-terminal",
+  "terminal.integrated.scrollback": 1000000,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.autocomplete.enable": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false
+  },
+  "vim.smartRelativeLine": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "prettier.endOfLine": "auto",
+  "terminal.integrated.fontFamily": "MesloLGS NF"
 }

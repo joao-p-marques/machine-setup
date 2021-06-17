@@ -1,0 +1,27 @@
+- name: Get fish path
+  command: which fish
+  register: result
+
+- name: Configure fish
+  when: "'fish' in result.stdout"
+  ansible.builtin.user:
+    name: "{{ ansible_env.USER }}"
+    shell: "{{ result.stdout }}"
+
+- name: Install fisher
+  shell: curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+  args:
+    path: result.stdout
+
+- name: Install neobundle for vim
+  block:
+      - ansible.builtin.get_url:
+          dest: /tmp/install.sh
+          url: https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh
+
+      - command: sh /tmp/install.sh
+
+- name: Make Neovim backupdir
+  file:
+    path: "{{ ansible_env.HOME }}/.local/share/nvim/backup/"
+    state: directory

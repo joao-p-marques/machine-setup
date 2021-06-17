@@ -1,0 +1,70 @@
+
+- name: Install base packages
+  community.general.rpm_ostree_pkg:
+    name:
+      - curl
+      - fish
+      - flatpak
+      - git
+      - neovim
+      - nodejs
+      - python
+      - python-pip
+      - python3-neovim
+      - tree
+      - vim
+      - wget
+    state: present
+
+- name: Install docker
+  tags:
+    - docker
+  community.general.rpm_ostree_pkg:
+    name: moby-engine
+    state: present
+
+- name: Replace ntftables with iptables
+  tags:
+    - docker
+  ansible.builtin.replace:
+    path: /etc/firewalld/firewalld.conf
+    regex: FirewallBackend=nftables
+    replace: FirewallBackend=iptables
+
+- name: Restart firewalld and docker
+  tags:
+    - docker
+  loop:
+    - firewalld
+    - docker
+  ansible.builtin.systemd:
+    name: "{{ item }}.service"
+    state: reloaded
+
+- name: Add user to docker group
+  tags:
+    - docker
+  ansible.builtin.user:
+    append: yes
+    groups:
+      - docker
+    name: "{{ ansible_user }}"
+
+- name: Install VSCode
+  tags:
+    - code
+  block:
+    - name: Import VSCode key
+      command: rpm --import https://packages.microsoft.com/keys/microsoft.asc
+      become: yes
+
+    - name: Add VSCode Repo
+      copy:
+        src: vscode.repo
+        dest: /etc/yum.repos.d/vscode.repo
+      become: yes
+
+    - name: Install VSCode
+      community.general.rpm_ostree_pkg:
+        name: code
+        state: present

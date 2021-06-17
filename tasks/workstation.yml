@@ -1,0 +1,37 @@
+
+- name: Add Flathub
+  command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+- name: Install set of flatpaks
+  loop:
+    - com.github.devalien.workspaces
+    - com.obsproject.Studio
+    - com.spotify.Client
+    - com.uploadedlobster.peek
+    - im.riot.Riot
+    - me.kozec.syncthingtk
+    - net.poedit.Poedit
+    - org.audacityteam.Audacity
+    - org.audacityteam.Audacity.Codecs
+    - org.gnome.DejaDup
+    - org.gnome.Logs
+    - org.gnome.Platform
+    - org.gnome.seahorse.Application
+    - org.jitsi.jitsi-meet
+    - org.kde.kdenlive
+    - org.videolan.VLC
+    - us.zoom.Zoom
+  command: "flatpak install -y flathub {{ item }}"
+
+- name: Install Kitty
+  tags:
+    - kitty
+  shell: curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
+# Create a symbolic link to add kitty to PATH (assuming ~/.local/bin is in
+# your PATH)
+# ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
+# Place the kitty.desktop file somewhere it can be found by the OS
+# cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+# Update the path to the kitty icon in the kitty.desktop file
+# sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty

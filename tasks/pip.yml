@@ -1,0 +1,17 @@
+- name: Install base pip packages
+  ansible.builtin.pip:
+    name:
+      - pipx
+      - pre-commit
+      - plumbum
+
+- name: Install pip packages with pipx
+  loop:
+    - docker-compose
+    - ansible --include-deps
+    # - invoke
+    - pre-commit
+    # - git+https://github.com/copier-org/copier.git@master
+    # - git+https://github.com/OCA/odoo-module-migrator.git@master
+    - poetry
+  command: "pipx install --force {{ item }}"

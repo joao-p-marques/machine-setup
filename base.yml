@@ -1,0 +1,21 @@
+- hosts: localhost
+  tags:
+    - always
+  tasks:
+    - import_tasks: tasks/base-silverblue.yml
+      when:
+        - ansible_facts['distribution'] == "Fedora"
+      tags:
+        - base
+
+    - import_tasks: tasks/after-base.yml
+      tags:
+        - after-base
+
+    - import_tasks: tasks/pip.yml
+      tags:
+        - pip
+
+    - import_tasks: tasks/workstation.yml
+      tags:
+        - workstation

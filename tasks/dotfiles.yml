@@ -1,0 +1,13 @@
+- name: clone dotfiles repo
+  ansible.builtin.git:
+    repo: git@github.com:joao-p-marques/dotfiles
+    dest: "{{ ansible_env.HOME }}/dotfiles"
+
+- name: Symlink dotfiles into appropiate location
+  loop:
+    - name: vimrc
+      dest: .vimrc
+  file:
+    src: "{{ ansible_env.HOME }}/dotfiles/{{ item.name }}"
+    dest: "{{ ansible_env.HOME }}/{{ item.name }}"
+    state: link
