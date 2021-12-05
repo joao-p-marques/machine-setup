@@ -1,6 +1,4 @@
 - hosts: localhost
-  tags:
-    - always
   tasks:
     - import_tasks: tasks/base-silverblue.yml
       when:
@@ -19,3 +17,7 @@
     - import_tasks: tasks/workstation.yml
       tags:
         - workstation
+
+    - import_tasks: tasks/dotfiles.yml
+      tags:
+        - dotfiles
