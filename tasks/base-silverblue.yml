@@ -2,6 +2,7 @@
 - name: Install base packages
   community.general.rpm_ostree_pkg:
     name:
+      - ctags
       - curl
       - fish
       - flatpak
