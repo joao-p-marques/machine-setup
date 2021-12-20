@@ -27,6 +27,10 @@
       dest: .config/kitty/dracula.conf
     - name: vimrc
       dest: .vimrc
+    - name: vscode-settings.json
+      dest: .config/VSCodium/User/settings.json
+    - name: vscode-keybindings.json
+      dest: .config/VSCodium/User/keybindings.json
   file:
     src: "{{ ansible_env.HOME }}/dotfiles/{{ item.name }}"
     dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
