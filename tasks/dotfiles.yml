@@ -1,0 +1,38 @@
+- name: clone dotfiles repo
+  ansible.builtin.git:
+    repo: git@github.com:joao-p-marques/dotfiles
+    dest: "{{ ansible_env.HOME }}/dotfiles"
+
+- name: create necessary folders
+  loop:
+    - "{{ ansible_env.HOME }}/.local/share/nvim/backup"
+    - "{{ ansible_env.HOME }}/.config/kitty"
+  file:
+    path: "{{ item }}"
+    state: directory
+
+- name: Symlink dotfiles into appropiate location
+  loop:
+    - name: config.fish
+      dest: .config/fish/config.fish
+    - name: gitconfig
+      dest: .gitconfig
+    - name: init.vim
+      dest: .config/nvim/init.vim
+    - name: nvim-plugins
+      dest: .config/nvim/plugins
+    - name: kitty.conf
+      dest: .config/kitty/kitty.conf
+    - name: kitty-dracula.conf
+      dest: .config/kitty/dracula.conf
+    - name: vimrc
+      dest: .vimrc
+    - name: vscode-settings.json
+      dest: .config/VSCodium/User/settings.json
+    - name: vscode-keybindings.json
+      dest: .config/VSCodium/User/keybindings.json
+  file:
+    src: "{{ ansible_env.HOME }}/dotfiles/{{ item.name }}"
+    dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
+    state: link
+    force: yes

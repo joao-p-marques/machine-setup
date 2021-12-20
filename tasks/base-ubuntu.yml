@@ -1,0 +1,45 @@
+
+- name: Install base packages
+  become: yes
+  ansible.builtin.apt:
+    pkg:
+      - curl
+      - fish
+      - flatpak
+      - git
+      - neovim
+      - python
+      - python3-pip
+      - python3-venv
+      - python3-neovim
+      - ripgrep
+      - tree
+      - vim
+      - wget
+
+- name: Install nodejs
+  become: yes
+  import_role:
+    name: geerlingguy.nodejs
+
+- name: Install docker
+  become: yes
+  import_role: 
+    name: geerlingguy.docker
+  tags:
+    - docker
+
+- name: Add user to docker group
+  tags:
+    - docker
+  ansible.builtin.user:
+    append: yes
+    groups:
+      - docker
+    name: "{{ ansible_user }}"
+
+- name: Install podman
+  tags:
+    - podman
+  import_role:
+    name: chasinglogic.podman

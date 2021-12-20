@@ -1,0 +1,33 @@
+- hosts: localhost
+  vars_prompt:
+    - name: "ansible_become_pass"
+      prompt: "Sudo password"
+      private: yes
+  tasks:
+    - import_tasks: tasks/base-silverblue.yml
+      when:
+        - ansible_facts['distribution'] == "Fedora"
+      tags:
+        - base
+
+    - import_tasks: tasks/base-ubuntu.yml
+      when:
+        - ansible_facts['distribution'] == "Ubuntu"
+      tags:
+        - base
+
+    - import_tasks: tasks/after-base.yml
+      tags:
+        - after-base
+
+    - import_tasks: tasks/pip.yml
+      tags:
+        - pip
+
+    - import_tasks: tasks/workstation.yml
+      tags:
+        - workstation
+
+    - import_tasks: tasks/dotfiles.yml
+      tags:
+        - dotfiles
