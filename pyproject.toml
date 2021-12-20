@@ -6,7 +6,7 @@ authors = ["João Marques <joao.marques@tecnativa.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-ansible = "^4.1.0"
+ansible = "^4.2.0"
 
 [tool.poetry.dev-dependencies]
 
