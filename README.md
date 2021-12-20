@@ -1,7 +1,9 @@
 Configuration files for my Linux machines.
 
-## Some commands that might be needed after:
+# Windows
 
-```bash
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-```
+https://ohmyposh.dev/docs/windows
+
+Allow to run scripts in Powershell, by opening one with admin privileges and running `Set-ExecutionPolicy Unrestricted`.
+
+Install applications using `winget`.

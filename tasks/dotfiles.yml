@@ -4,16 +4,17 @@
     dest: "{{ ansible_env.HOME }}/dotfiles"
 
 - name: create necessary folders
+  loop:
+    - "{{ ansible_env.HOME }}/.local/share/nvim/backup"
+    - "{{ ansible_env.HOME }}/.config/kitty"
   file:
-    path: "{{ ansible_env.HOME }}/.local/share/nvim/backup"
+    path: "{{ item }}"
     state: directory
 
 - name: Symlink dotfiles into appropiate location
   loop:
     - name: config.fish
       dest: .config/fish/config.fish
-    - name: fish_prompt.fish
-      dest: .config/fish/functions/fish_prompt.fish
     - name: gitconfig
       dest: .gitconfig
     - name: init.vim
@@ -30,3 +31,4 @@
     src: "{{ ansible_env.HOME }}/dotfiles/{{ item.name }}"
     dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
     state: link
+    force: yes

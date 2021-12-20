@@ -9,9 +9,17 @@
     shell: "{{ result.stdout }}"
 
 - name: Install fisher
-  shell: curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+  ansible.builtin.shell: curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
   args:
-    path: result.stdout
+    executable: "{{ result.stdout }}"
+
+- name: Install fisher plugins
+  loop:
+    - IlanCosman/tide@v5
+    - franciscolourenco/done
+  ansible.builtin.shell: fisher install "{{ item }}"
+  args:
+    executable: "{{ result.stdout }}"
 
 - name: Install neobundle for vim
   block:
@@ -20,6 +28,8 @@
           url: https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh
 
       - command: sh /tmp/install.sh
+        register: _result
+        failed_when: "'already exists' not in _result.stdout"
 
 - name: Make Neovim backupdir
   file:
