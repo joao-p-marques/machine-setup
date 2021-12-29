@@ -7,6 +7,7 @@
   loop:
     - "{{ ansible_env.HOME }}/.local/share/nvim/backup"
     - "{{ ansible_env.HOME }}/.config/kitty"
+    - "{{ ansible_env.HOME }}/.config/ulauncher"
   file:
     path: "{{ item }}"
     state: directory
@@ -31,6 +32,12 @@
       dest: .config/VSCodium/User/settings.json
     - name: vscode-keybindings.json
       dest: .config/VSCodium/User/keybindings.json
+    - name: ulauncher-extensions.json
+      dest: .config/ulauncher/extensions.json
+    - name: ulauncher-settings.json
+      dest: .config/ulauncher/settings.json
+    - name: ulauncher-shortcuts.json
+      dest: .config/ulauncher/shortcuts.json
   file:
     src: "{{ ansible_env.HOME }}/dotfiles/{{ item.name }}"
     dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
