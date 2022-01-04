@@ -8,6 +8,7 @@
     - "{{ ansible_env.HOME }}/.local/share/nvim/backup"
     - "{{ ansible_env.HOME }}/.config/kitty"
     - "{{ ansible_env.HOME }}/.config/ulauncher"
+    - "{{ ansible_env.HOME }}/.config/VSCodium/User"
   file:
     path: "{{ item }}"
     state: directory

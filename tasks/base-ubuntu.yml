@@ -1,4 +1,9 @@
 
+- name: Add neovim development repo
+  ansible.builtin.apt_repository:
+    repo: deb http://ppa.launchpad.net/neovim-ppa/unstable/ubuntu focal main
+    state: present
+
 - name: Install base packages
   become: yes
   ansible.builtin.apt:
