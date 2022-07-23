@@ -2,3 +2,6 @@ roles:
   - geerlingguy.docker
   - chasinglogic.podman
   - geerlingguy.nodejs
+
+collections:
+  - name: community.general

@@ -8,4 +8,4 @@ pipx install poetry
 poetry install
 poetry run ansible-galaxy collection install community.general
 poetry run ansible-galaxy collection install ansible.posix
-poetry run ansible-playbook base.yml
+# poetry run ansible-playbook base.yml
