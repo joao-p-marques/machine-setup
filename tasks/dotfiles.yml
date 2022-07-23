@@ -1,4 +1,6 @@
 - name: clone dotfiles repo
+  tags:
+    - clone
   ansible.builtin.git:
     repo: git@github.com:joao-p-marques/dotfiles
     dest: "{{ ansible_env.HOME }}/dotfiles"
