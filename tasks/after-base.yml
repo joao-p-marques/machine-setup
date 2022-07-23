@@ -4,6 +4,7 @@
 
 - name: Configure fish
   when: "'fish' in result.stdout"
+  become: yes
   ansible.builtin.user:
     name: "{{ ansible_env.USER }}"
     shell: "{{ result.stdout }}"
@@ -20,6 +21,8 @@
   ansible.builtin.shell: fisher install "{{ item }}"
   args:
     executable: "{{ result.stdout }}"
+  register: _result
+  failed_when: "'conflicting files' not in _result.stderr and 'Updated 1 plugin' not in _result.stdout"
 
 - name: Install neobundle for vim
   block:

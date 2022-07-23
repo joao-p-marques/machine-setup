@@ -14,14 +14,16 @@
     - org.audacityteam.Audacity
     - org.audacityteam.Audacity.Codecs
     - org.gnome.DejaDup
-    - org.gnome.Logs
-    - org.gnome.Platform
+    # - org.gnome.Logs
+    # - org.gnome.Platform
     - org.gnome.seahorse.Application
     - org.jitsi.jitsi-meet
     - org.kde.kdenlive
     - org.videolan.VLC
     - us.zoom.Zoom
   command: "flatpak install -y flathub {{ item }}"
+  register: _result
+  changed_when: "'is already installed' not in _result.stdout"
 
 - name: Install Kitty
   tags:
